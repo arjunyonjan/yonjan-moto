@@ -91,6 +91,30 @@ const cartridgeSteps = [
   },
 ];
 
+const forkSteps = [
+  {
+    img: '/images/outer-collar.png',
+    step: '01',
+    title: 'Outer Collar',
+    en: 'CNC turning collar: CAD model → lathe turning → finished matte gold surface.',
+    np: 'आउटर कलर — क्याड, सीएनसी ढिल्लो, म्याट गोल्ड।',
+  },
+  {
+    img: '/images/front-forks-a.png',
+    step: '02',
+    title: 'Front Forks - SHOWA',
+    en: 'Gold SHOWA front forks with red accents, tested on dirt terrain.',
+    np: 'शोवा फ्रन्ट फर्क् — माटोमा परीक्षण।',
+  },
+  {
+    img: '/images/front-forks-b.png',
+    step: '03',
+    title: 'SFF Air Forks',
+    en: 'SHOWA SFF AIR front forks — Separate Function Fork. Race-proven, precise control.',
+    np: 'शोवा एसएफएफ एयर — रेस-प्रुभ्ड, प्रिसिस कन्ट्रोल।',
+  },
+];
+
 export default function Shocks() {
   return (
     <main>
@@ -125,6 +149,23 @@ export default function Shocks() {
               <div key={s.step} className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
                 <div className="lg:col-span-2 order-1 lg:order-none">
                   <span className="text-sm font-bold text-accent tracking-widest">C-{s.step}</span>
+                  <h3 className="mt-2 text-xl font-extrabold text-xxl">{s.title}</h3>
+                  <p className="mt-3 text-gray-600 leading-relaxed">{s.en}</p>
+                  <p className="mt-2 text-gray-500 leading-relaxed text-sm">{s.np}</p>
+                </div>
+                <div className="lg:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src={s.img} alt={s.title} className="w-full h-auto block" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-2xl font-bold text-xxl mb-6 mt-20">03 — Fork Tubes</h2>
+          <div className="space-y-12">
+            {forkSteps.map((s) => (
+              <div key={s.step} className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                <div className="lg:col-span-2 order-1 lg:order-none">
+                  <span className="text-sm font-bold text-accent tracking-widest">F-{s.step}</span>
                   <h3 className="mt-2 text-xl font-extrabold text-xxl">{s.title}</h3>
                   <p className="mt-3 text-gray-600 leading-relaxed">{s.en}</p>
                   <p className="mt-2 text-gray-500 leading-relaxed text-sm">{s.np}</p>
