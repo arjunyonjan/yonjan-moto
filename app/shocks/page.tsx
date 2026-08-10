@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const steps = [
+const lugsSteps = [
   {
     img: '/images/lugs-cad-drawing.jpg',
     step: '01',
@@ -51,12 +51,29 @@ const steps = [
     en: 'CNC drilling bores, faces, and slots to precise tolerance. Coolant carries away chips.',
     np: 'बोर, सतह र स्लट सटीक ड्रिल तथा मिलिङ गरिन्छ।',
   },
+];
+
+const cartridgeSteps = [
+  {
+    img: '/images/cartridge-cylinder.png',
+    step: '01',
+    title: 'Cartridge Cylinder',
+    en: 'CAD model + CNC machining of the hollow cylinder with internal holes. Text reads “CARTRIDGE CYLINDER”.',
+    np: 'क्याड मोडेल + सीएनसी मेसिनिङ — हलो वाला सिलिन्डर।',
+  },
+  {
+    img: '/images/cartridge-piston.png',
+    step: '02',
+    title: 'Mid-Valve Piston',
+    en: 'Three stages: CAD model, CNC drilling, and finished piston with polished internal threading.',
+    np: 'तीन अवस्था: क्याड, सीएनसी ढिल्लो, फिनिष्ड पिस्टन।',
+  },
   {
     img: '/images/cartridge-top-cap.png',
-    step: '08',
-    title: 'Cartridge Top Cap',
-    en: 'Gold-plated cartridge top cap — CAD design, CNC machining, polished finish with precision concentric rings.',
-    np: 'गल्ड प्लेटेड क्याबिनेट टप क्याप — सीएनसी मेसिनिङ, पोलिशेड।',
+    step: '03',
+    title: 'Top Cap',
+    en: 'Gold-plated cartridge top cap with precision concentric rings. CAD, CNC, polished finish.',
+    np: 'गल्ड प्लेटेड टप क्याप — सीएनसी मेसिनिङ, पोलिशेड।',
   },
 ];
 
@@ -68,20 +85,40 @@ export default function Shocks() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-sm font-semibold tracking-[0.3em] text-accent uppercase mb-3">How It&apos;s Made</p>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-xxl tracking-tight mb-4">Shocks — Manufacturing</h1>
-          <p className="text-gray-500 max-w-2xl text-lg mb-4">Lugs: CAD, mold design, casting, CNC machining, cartridge finishing.</p>
-          <p className="text-gray-400 max-w-2xl mb-16">लगहरू: क्याड, मल डिजाइन, कास्टिङ, सीएनसी मेसिनिङ, कार्ट्रिज फिनिसिङ।</p>
+          <p className="text-gray-500 max-w-2xl text-lg mb-4">End-to-end: lugs casting, CNC machining, cartridge assembly.</p>
+          <p className="text-gray-400 max-w-2xl mb-16">शक-सस्टम निर्माण: लग कास्टिङ, सीएनसी मेसिनिङ, क्याबिनेट असेम्बली।</p>
 
-          <div className="space-y-16">
-            {steps.map((s) => (
+          {/* LUGS group */}
+          <h2 className="text-2xl font-bold text-xxl mb-6">01 — Lugs Manufacturing</h2>
+          <div className="space-y-12 mb-16">
+            {lugsSteps.map((s) => (
               <div key={s.step} className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                <div className="lg:col-span-2 order-1 lg:order-none">
+                  <span className="text-sm font-bold text-accent tracking-widest">{s.step}</span>
+                  <h3 className="mt-2 text-xl font-extrabold text-xxl">{s.title}</h3>
+                  <p className="mt-3 text-gray-600 leading-relaxed">{s.en}</p>
+                  <p className="mt-2 text-gray-500 leading-relaxed text-sm">{s.np}</p>
+                </div>
                 <div className="lg:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
                   <img src={s.img} alt={s.title} className="w-full h-auto block" />
                 </div>
-                <div className="lg:col-span-2">
-                  <span className="text-sm font-bold text-accent tracking-widest">{s.step}</span>
-                  <h2 className="mt-3 text-2xl font-extrabold text-xxl">{s.title}</h2>
+              </div>
+            ))}
+          </div>
+
+          {/* CARTRIDGE group */}
+          <h2 className="text-2xl font-bold text-xxl mb-6">02 — Cartridge Assembly</h2>
+          <div className="space-y-12">
+            {cartridgeSteps.map((s) => (
+              <div key={s.step} className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                <div className="lg:col-span-2 order-1 lg:order-none">
+                  <span className="text-sm font-bold text-accent tracking-widest">C-{s.step}</span>
+                  <h3 className="mt-2 text-xl font-extrabold text-xxl">{s.title}</h3>
                   <p className="mt-3 text-gray-600 leading-relaxed">{s.en}</p>
                   <p className="mt-2 text-gray-500 leading-relaxed text-sm">{s.np}</p>
+                </div>
+                <div className="lg:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src={s.img} alt={s.title} className="w-full h-auto block" />
                 </div>
               </div>
             ))}
