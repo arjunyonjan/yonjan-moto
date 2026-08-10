@@ -158,7 +158,7 @@ export default function Home() {
 
       {lightbox !== null && (
         <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
-          <div className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
             <button onClick={() => setLightbox(null)} className="absolute -top-12 right-0 text-white text-sm font-medium hover:text-gray-300 transition">&times; Close</button>
             <img src={galleryImages[lightbox].img} alt={galleryImages[lightbox].cap} className="max-h-[80vh] w-auto object-contain rounded shadow-2xl" />
             <p className="mt-4 text-white text-sm">{galleryImages[lightbox].cap}</p>
