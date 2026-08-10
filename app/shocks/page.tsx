@@ -6,29 +6,50 @@ const steps = [
     img: '/images/lugs-cad-drawing.jpg',
     step: '01',
     title: 'CAD & Technical Drawing',
-    en: 'Lug geometry designed in CAD with technical drawings — dimensions, tolerances, material specs.',
-    np: 'क्याड र टेक्निकल ड्राइङ — आयाम, टलरेन्स, सामग्री विशेषता।',
-  },
-  {
-    img: '/images/casting-process.png',
-    step: '02',
-    title: 'Aluminum Casting',
-    en: 'Molten aluminum is poured into a closed mold, cooled, then ejected. The lug gets its structural shape here.',
-    np: 'पग्लिएको एलुमिनियम मोल्डमा हालिन्छ, चिसो बनाइन्छ, अनि निकालिन्छ।',
+    en: 'Lug geometry designed in CAD with technical drawings, dimensions, and tolerance specs.',
+    np: 'क्याड र टेक्निकल ड्राइङ — आयाम र टलरेन्स निर्धारण।',
   },
   {
     img: '/images/shock-lug-mold.png',
+    step: '02',
+    title: 'Mold Design',
+    en: 'Split-mold design with main core, cavity, and side core (slide). Engineered for lug bracket geometry.',
+    np: 'मुख्य कोर, क्याभिटी र साइड कोर (स्लाइड) को मल डिजाइन।',
+  },
+  {
+    img: '/images/lugs-mold-halves.png',
     step: '03',
-    title: 'Lug Mold Design',
-    en: 'Engineered with a main core, cavity, and side core. Forms the mounting bore and bracket profile.',
-    np: 'मुख्य कोर, क्याभिटी र साइड कोरबाट माउन्टिङ बोर बनाइन्छ।',
+    title: 'Mold Assembly',
+    en: 'Mold halves closed with green inserts and side cores positioned for cavity filling.',
+    np: 'हरियो इन्सर्ट र साइड कोरले मल बनाइन्छ।',
+  },
+  {
+    img: '/images/lugs-casting-pour.png',
+    step: '04',
+    title: 'Pouring',
+    en: 'Molten metal (orange-yellow) pours into the closed mold. Controlled flow for defect-free casting.',
+    np: 'पिघ्लिएको धातु मलमा हालिन्छ।',
+  },
+  {
+    img: '/images/casting-process.png',
+    step: '05',
+    title: 'Casting Process',
+    en: 'Mold closed, aluminum poured, cooling, mold opened. Made Strong. Made Precise.',
+    np: 'मल बनाइन्छ, एलुमिनियम हालिन्छ, ठण्डा, खोलिन्छ।',
+  },
+  {
+    img: '/images/lugs-components.png',
+    step: '06',
+    title: 'Casted Lugs',
+    en: 'Two cast lug components with central bore, mounting arm, and screw holes — ready for machining.',
+    np: 'बोर र स्क्रु ढाका लगहरू — मेसिनिङ तयार।',
   },
   {
     img: '/images/lug-machining.png',
-    step: '04',
-    title: 'CNC Lug Machining',
-    en: 'Critical surfaces — bores, faces, slots — are drilled and milled to precise tolerance.',
-    np: 'बोर, सतह र स्लटहरू सटीक रूपमा ड्रिल तथा मिलिङ गरिन्छ।',
+    step: '07',
+    title: 'CNC Machining',
+    en: 'CNC drilling bores, faces, and slots to precise tolerance. Coolant carries away chips.',
+    np: 'बोर, सतह र स्लट सटीक ड्रिल तथा मिलिङ गरिन्छ।',
   },
 ];
 
@@ -40,8 +61,8 @@ export default function Shocks() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-sm font-semibold tracking-[0.3em] text-accent uppercase mb-3">How It&apos;s Made</p>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-xxl tracking-tight mb-4">Shocks — Manufacturing</h1>
-          <p className="text-gray-500 max-w-2xl text-lg mb-4">Lugs casting → mold design → CNC machining.</p>
-          <p className="text-gray-400 max-w-2xl mb-16">लग कास्टिङ → मल्ड डिजाइन → सीएनसी मेसिनिङ।</p>
+          <p className="text-gray-500 max-w-2xl text-lg mb-4">Lugs: CAD, mold design, casting, CNC machining.</p>
+          <p className="text-gray-400 max-w-2xl mb-16">लगहरू: क्याड, मल डिजाइन, कास्टिङ, सीएनसी मेसिनिङ।</p>
 
           <div className="space-y-16">
             {steps.map((s) => (
