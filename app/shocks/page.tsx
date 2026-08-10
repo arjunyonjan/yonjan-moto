@@ -93,22 +93,29 @@ const cartridgeSteps = [
 
 const forkSteps = [
   {
-    img: '/images/outer-collar.png',
+    img: '/images/inner-fork-tube.png',
     step: '01',
+    title: 'Inner Fork Tube',
+    en: 'Precision CNC turning: CAD model with dimensions, lathe machining for threads/diameter, finished smooth cylinder.',
+    np: 'इनर फर्क ट्यूब — क्याड, सीएनसी ढिल्लो, पोलिशेड सिलिन्डर।',
+  },
+  {
+    img: '/images/outer-collar.png',
+    step: '02',
     title: 'Outer Collar',
     en: 'CNC turning collar: CAD model → lathe turning → finished matte gold surface.',
     np: 'आउटर कलर — क्याड, सीएनसी ढिल्लो, म्याट गोल्ड।',
   },
   {
     img: '/images/front-forks-a.png',
-    step: '02',
+    step: '03',
     title: 'Front Forks - SHOWA',
     en: 'Gold SHOWA front forks with red accents, tested on dirt terrain.',
     np: 'शोवा फ्रन्ट फर्क् — माटोमा परीक्षण।',
   },
   {
     img: '/images/front-forks-b.png',
-    step: '03',
+    step: '04',
     title: 'SFF Air Forks',
     en: 'SHOWA SFF AIR front forks — Separate Function Fork. Race-proven, precise control.',
     np: 'शोवा एसएफएफ एयर — रेस-प्रुभ्ड, प्रिसिस कन्ट्रोल।',
