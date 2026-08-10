@@ -1,28 +1,24 @@
-const tones = [
-  'from-gray-100 to-gray-200',
-  'from-stone-100 to-stone-200',
-  'from-zinc-100 to-zinc-200',
-  'from-gray-50 to-gray-150',
-  'from-stone-50 to-stone-150',
-  'from-zinc-50 to-zinc-150',
+const shots = [
+  { img: '/images/body-plastics.png', cap: 'KTM Mid Body Plastics — molded & textured' },
+  { img: '/images/rayzr-fender.png', cap: 'Yamaha RAYZR 125 fender — mold key diagram' },
+  { img: '/images/mold-halves.png', cap: 'Cavity & Core halves — fender mold assembly' },
+  { img: '/images/robotic-mold.png', cap: 'Robotic arm — mold tending & cooling' },
+  { img: '/images/helmet-sls.png', cap: 'SLS 3D print — helmet prototype stage' },
+  { img: '/images/robotic-fender.png', cap: 'Automated fender trimming & finishing' },
 ];
-const h = ['h-56', 'h-72', 'h-64', 'h-80', 'h-60', 'h-76'];
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-white py-20 sm:py-28">
+    <section id="gallery" className="bg-card py-20 sm:py-28">
       <div className="max-w-6xl mx-auto px-6">
-        <p className="text-2xl sm:text-4xl font-bold text-center text-xxl mb-14">
-          From Nepal, For the World
-        </p>
+        <p className="text-2xl sm:text-4xl font-bold text-center text-xxl mb-4">From Nepal, For the World</p>
+        <p className="text-center text-gray-500 mb-16 max-w-xl mx-auto">Production shots from the floor. Real molds, real parts, real processes.</p>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
-          {tones.map((t, i) => (
-            <div
-              key={i}
-              className={`${h[i]} w-full rounded-xl bg-gradient-to-br ${t} flex items-center justify-center text-gray-300 text-sm tracking-widest uppercase break-inside-avoid border border-gray-100`}
-            >
-              Shot {String(i + 1).padStart(2, '0')}
-            </div>
+          {shots.map((s) => (
+            <figure key={s.cap} className="break-inside-avoid rounded-lg overflow-hidden border border-gray-100 bg-white">
+              <img src={s.img} alt={s.cap} className="w-full h-auto block" />
+              <figcaption className="px-4 py-3 text-xs text-gray-500 border-t border-gray-50">{s.cap}</figcaption>
+            </figure>
           ))}
         </div>
       </div>
