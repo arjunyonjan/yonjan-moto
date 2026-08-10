@@ -10,8 +10,8 @@ export default function Header() {
         </div>
         <nav className="hidden sm:flex gap-8 text-sm font-medium text-gray-600">
           <a href="/#process" className="hover:text-accent transition">Process</a>
-          <a href="/#gallery" className="hover:text-accent transition">Gallery</a>
           <a href="/work" className="hover:text-accent transition">Work</a>
+          <a href="/shocks" className="hover:text-accent transition">Shocks</a>
           <a href="/#contact" className="hover:text-accent transition">Contact</a>
         </nav>
       </div>
