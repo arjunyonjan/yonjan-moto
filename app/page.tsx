@@ -61,7 +61,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const onKey = (e) => {
+    const onKey = (e: KeyboardEvent) => {
       if (lightbox === null) return;
       if (e.key === 'Escape') setLightbox(null);
       if (e.key === 'ArrowRight') setLightbox((lightbox + 1) % galleryImages.length);
