@@ -79,7 +79,7 @@ export default function Home() {
 
       <section className="relative h-screen overflow-hidden flex items-center justify-center">
         <div className="parallax-bg absolute inset-0 -top-20 -bottom-20" style={{ transform: 'translateY(' + heroY + 'px)' }}>
-          <img src="/images/cnc-mold.png" alt="" className="w-full h-full object-cover opacity-15" />
+          <img src="/images/cnc-mold.png" alt="" className="w-full h-full object-cover opacity-25" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white" />
         <div className="relative z-10 text-center px-6 max-w-5xl">
@@ -125,9 +125,9 @@ export default function Home() {
         </div>
         <div className="h-scroll flex gap-6 overflow-x-auto px-6 pb-6 snap-x snap-mandatory">
           {processImages.map((s, i) => (
-            <div key={s.step} className="snap-start shrink-0 w-[85vw] sm:w-[420px] bg-card rounded-xl overflow-hidden border border-gray-100 reveal-scale" style={{ transitionDelay: (i * 0.05) + 's' }}>
-              <div className="aspect-[4/3] overflow-hidden bg-gray-50">
-                <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
+            <div key={s.step} className="snap-start shrink-0 w-[85vw] sm:w-[420px] bg-card rounded-xl overflow-hidden border-2 border-gray-200 shadow-xl reveal-scale" style={{ transitionDelay: (i * 0.05) + 's' }}>
+              <div className="aspect-[4/3] overflow-hidden bg-gray-100 shadow-inner">
+                <img src={s.img} alt={s.title} className="w-full h-full object-contain bg-gray-50 border-b border-gray-200" />
               </div>
               <div className="p-6">
                 <span className="text-xs font-bold text-accent tracking-widest">{s.step}</span>
@@ -139,15 +139,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="gallery" className="bg-card py-20">
+      <section id="gallery" className="bg-gray-900 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="reveal text-sm font-semibold tracking-[0.3em] text-accent uppercase mb-3">Gallery</p>
           <h2 className="reveal text-3xl sm:text-5xl font-extrabold text-xxl tracking-tight" style={{ transitionDelay: '0.1s' }}>From the Floor</h2>
-          <p className="reveal mt-3 text-gray-500 mb-12" style={{ transitionDelay: '0.15s' }}>Tap any image to view full size. Use arrow keys to navigate.</p>
+          <p className="reveal mt-3 text-gray-400 mb-12" style={{ transitionDelay: '0.15s' }}>Tap any image to view full size. Use arrow keys to navigate.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 stagger">
             {galleryImages.map((s, i) => (
-              <div key={i} className="reveal cursor-pointer rounded-lg overflow-hidden border border-gray-100 img-zoom bg-white" onClick={() => setLightbox(i)}>
-                <img src={s.img} alt={s.cap} className="w-full h-auto block" />
+              <div key={i} className="reveal cursor-pointer rounded-lg overflow-hidden border-2 border-gray-400 shadow-xl hover:shadow-2xl hover:border-accent transition img-zoom bg-white" onClick={() => setLightbox(i)}>
+                <img src={s.img} alt={s.cap} className="w-full h-auto block bg-white" />
               </div>
             ))}
           </div>
@@ -161,7 +161,7 @@ export default function Home() {
         <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
           <div className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
             <button onClick={() => setLightbox(null)} className="absolute -top-12 right-0 text-white text-sm font-medium hover:text-gray-300 transition">&times; Close</button>
-            <img src={galleryImages[lightbox].img} alt={galleryImages[lightbox].cap} className="max-h-[80vh] w-auto object-contain rounded shadow-2xl" />
+            <img src={galleryImages[lightbox].img} alt={galleryImages[lightbox].cap} className="max-h-[80vh] w-auto object-contain rounded shadow-2xl border-2 border-gray-600" />
             <p className="mt-4 text-white text-sm">{galleryImages[lightbox].cap}</p>
             <div className="flex gap-6 mt-4">
               <button onClick={() => setLightbox((lightbox - 1 + galleryImages.length) % galleryImages.length)} className="text-white/70 text-sm hover:text-white transition">&larr; Prev</button>
