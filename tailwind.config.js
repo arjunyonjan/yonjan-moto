@@ -10,9 +10,6 @@ module.exports = {
         accent: '#DC2626',
         xxl: '#111827',
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-      },
     },
   },
   plugins: [],

@@ -1,7 +1,12 @@
-const items = Array.from({ length: 6 }, (_, i) => ({
-  id: i + 1,
-  h: i % 2 === 0 ? 'h-64' : 'h-80',
-}));
+const tones = [
+  'from-gray-100 to-gray-200',
+  'from-stone-100 to-stone-200',
+  'from-zinc-100 to-zinc-200',
+  'from-gray-50 to-gray-150',
+  'from-stone-50 to-stone-150',
+  'from-zinc-50 to-zinc-150',
+];
+const h = ['h-56', 'h-72', 'h-64', 'h-80', 'h-60', 'h-76'];
 
 export default function Gallery() {
   return (
@@ -10,13 +15,13 @@ export default function Gallery() {
         <p className="text-2xl sm:text-4xl font-bold text-center text-xxl mb-14">
           From Nepal, For the World
         </p>
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {items.map((it) => (
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
+          {tones.map((t, i) => (
             <div
-              key={it.id}
-              className={`${it.h} w-full rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-400 font-medium break-inside-avoid`}
+              key={i}
+              className={`${h[i]} w-full rounded-xl bg-gradient-to-br ${t} flex items-center justify-center text-gray-300 text-sm tracking-widest uppercase break-inside-avoid border border-gray-100`}
             >
-              Image {it.id}
+              Shot {String(i + 1).padStart(2, '0')}
             </div>
           ))}
         </div>

@@ -3,4 +3,4 @@
 @tailwind utilities;
 
 html { scroll-behavior: smooth; }
-body { @apply bg-bg text-primary antialiased; }
+body { @apply bg-bg text-primary antialiased; font-family: var(--font-space), system-ui, sans-serif; }
