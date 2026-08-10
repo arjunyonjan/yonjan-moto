@@ -83,6 +83,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <a href="/work" className="inline-block mt-8 text-accent font-semibold text-sm hover:underline">View all work &rarr;</a>
         </div>
       </section>
 
