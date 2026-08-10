@@ -34,7 +34,7 @@ const steps = [
     img: '/images/casting-process.png',
     step: '05',
     title: 'Casting Process',
-    en: 'Mold closed, aluminum poured, cooling, mold opened. Made Strong. Made Precise.',
+    en: 'Mold closed, aluminum poured, cooling, mold opened.',
     np: 'मल बनाइन्छ, एलुमिनियम हालिन्छ, ठण्डा, खोलिन्छ।',
   },
   {
@@ -47,9 +47,16 @@ const steps = [
   {
     img: '/images/lug-machining.png',
     step: '07',
-    title: 'CNC Machining',
+    title: 'CNC Lug Machining',
     en: 'CNC drilling bores, faces, and slots to precise tolerance. Coolant carries away chips.',
     np: 'बोर, सतह र स्लट सटीक ड्रिल तथा मिलिङ गरिन्छ।',
+  },
+  {
+    img: '/images/cartridge-top-cap.png',
+    step: '08',
+    title: 'Cartridge Top Cap',
+    en: 'Gold-plated cartridge top cap — CAD design, CNC machining, polished finish with precision concentric rings.',
+    np: 'गल्ड प्लेटेड क्याबिनेट टप क्याप — सीएनसी मेसिनिङ, पोलिशेड।',
   },
 ];
 
@@ -61,8 +68,8 @@ export default function Shocks() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-sm font-semibold tracking-[0.3em] text-accent uppercase mb-3">How It&apos;s Made</p>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-xxl tracking-tight mb-4">Shocks — Manufacturing</h1>
-          <p className="text-gray-500 max-w-2xl text-lg mb-4">Lugs: CAD, mold design, casting, CNC machining.</p>
-          <p className="text-gray-400 max-w-2xl mb-16">लगहरू: क्याड, मल डिजाइन, कास्टिङ, सीएनसी मेसिनिङ।</p>
+          <p className="text-gray-500 max-w-2xl text-lg mb-4">Lugs: CAD, mold design, casting, CNC machining, cartridge finishing.</p>
+          <p className="text-gray-400 max-w-2xl mb-16">लगहरू: क्याड, मल डिजाइन, कास्टिङ, सीएनसी मेसिनिङ, कार्ट्रिज फिनिसिङ।</p>
 
           <div className="space-y-16">
             {steps.map((s) => (
