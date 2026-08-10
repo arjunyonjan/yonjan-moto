@@ -1,6 +1,37 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+const forkSteps = [
+  {
+    img: '/images/inner-fork-tube.png',
+    step: '01',
+    title: 'Precision Inner Fork Tube',
+    en: 'CNC turning of inner fork tube: CAD with dimensions, lathe threading + diameter, finished smooth surface.',
+    np: 'इनर फर्क ट्यूब — क्याड, सीएनसी, समत सतह।',
+  },
+  {
+    img: '/images/inner-tube-fork-model.png',
+    step: '02',
+    title: 'Inner Fork Assembly — CAD & Simulation',
+    en: '3D CAD model of fork inner tube with dimension labels, performance simulation graph below.',
+    np: 'फर्क इनर ट्यूबको ३डी मोडेल + सिमुलेसन।',
+  },
+  {
+    img: '/images/inner-tube-waterjet.png',
+    step: '03',
+    title: 'Water Jet Cutting',
+    en: 'High-pressure water jet cutting cylindrical inner tube component inside precision machine housing.',
+    np: 'वाटर जेट कटिङ — सिलिन्डर ट्यूब।',
+  },
+  {
+    img: '/images/outer-collar.png',
+    step: '04',
+    title: 'Outer Collar',
+    en: 'CNC turning of outer collar: CAD → lathe turning → finished matte gold surface.',
+    np: 'आउटर कलर — क्याड, सीएनसी, म्याट गोल्ड।',
+  },
+];
+
 const lugsSteps = [
   {
     img: '/images/lugs-cad-drawing.jpg',
@@ -133,51 +164,6 @@ const cartridgeSteps = [
   },
 ];
 
-const forkSteps = [
-  {
-    img: '/images/inner-fork-tube.png',
-    step: '01',
-    title: 'Precision Inner Fork Tube',
-    en: 'CNC turning of inner fork tube: CAD with dimensions, lathe threading + diameter, finished smooth surface.',
-    np: 'इनर फर्क ट्यूब — क्याड, सीएनसी, समत सतह।',
-  },
-  {
-    img: '/images/inner-tube-fork-model.png',
-    step: '02',
-    title: 'Inner Fork Assembly — CAD & Simulation',
-    en: '3D CAD model of fork inner tube with dimension labels, performance simulation graph below.',
-    np: 'फर्क इनर ट्यूबको ३डी मोडेल + सिमुलेसन।',
-  },
-  {
-    img: '/images/inner-tube-waterjet.png',
-    step: '03',
-    title: 'Water Jet Cutting',
-    en: 'High-pressure water jet cutting cylindrical inner tube component inside precision machine housing.',
-    np: 'वाटर जेट कटिङ — सिलिन्डर ट्यूब।',
-  },
-  {
-    img: '/images/outer-collar.png',
-    step: '04',
-    title: 'Outer Collar',
-    en: 'CNC turning of outer collar: CAD → lathe turning → finished matte gold surface.',
-    np: 'आउटर कलर — क्याड, सीएनसी, म्याट गोल्ड।',
-  },
-  {
-    img: '/images/front-forks-a.png',
-    step: '05',
-    title: 'SHOWA Front Forks',
-    en: 'Gold SHOWA front forks with red accents — tested on dirt terrain for damping response.',
-    np: 'शोवा फ्रन्ट फर्क् — माटोमा परीक्षण।',
-  },
-  {
-    img: '/images/front-forks-b.png',
-    step: '06',
-    title: 'SFF-Air Front Forks',
-    en: 'SHOWA SFF Air — Separate Function Fork. Race-proven cartridge design with precise compression/rebound.',
-    np: 'शोवा एसएफएफ एयर — रेस-प्रुभ्ड।',
-  },
-];
-
 export default function Shocks() {
   return (
     <main>
@@ -186,8 +172,23 @@ export default function Shocks() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-sm font-semibold tracking-[0.3em] text-accent uppercase mb-3">How It&apos;s Made</p>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-xxl tracking-tight mb-4">Shocks — Manufacturing</h1>
-          <p className="text-gray-500 max-w-2xl text-lg mb-4">End-to-end: lugs casting, CNC machining, cartridge assembly, fork tuning.</p>
-          <p className="text-gray-400 max-w-2xl mb-16">शक-सस्टम निर्माण: लग कास्टिङ, सीएनसी मेसिनिङ, क्याबिनेट असेम्बली।</p>
+          <p className="text-gray-500 max-w-2xl text-lg mb-4">End-to-end: fork tubes, lugs casting, CNC machining, cartridge assembly.</p>
+          <p className="text-gray-400 max-w-2xl mb-16">शक-सस्टम निर्माण: फर्क ट्यूब, लग कास्टिङ, सीएनसी मेसिनिङ, क्याबिनेट असेम्बली।</p>
+
+          <div className="mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                <img src="/images/front-forks-a.png" alt="SHOWA Front Forks" className="w-full h-auto block" />
+              </div>
+              <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                <img src="/images/front-forks-b.png" alt="SFF-Air Front Forks" className="w-full h-auto block" />
+              </div>
+            </div>
+            <div className="mt-4 text-center">
+              <p className="text-sm font-semibold text-accent">Full Front Fork Assembly</p>
+              <p className="text-gray-500 text-sm mt-1">SHOWA monoblock (left) · SFF-Air separate function (right)</p>
+            </div>
+          </div>
 
           <div className="mb-16">
             <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50 group">
@@ -200,7 +201,24 @@ export default function Shocks() {
             <p className="text-sm text-gray-500 mt-3 text-center">Factory overview of complete front shock assembly line</p>
           </div>
 
-          <h2 className="text-2xl font-bold text-xxl mb-6">01 — Lugs Manufacturing</h2>
+          <h2 className="text-2xl font-bold text-xxl mb-6">01 — Fork Tubes</h2>
+          <div className="space-y-12 mb-16">
+            {forkSteps.map((s) => (
+              <div key={s.step} className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                <div className="lg:col-span-2 order-1 lg:order-none">
+                  <span className="text-sm font-bold text-accent tracking-widest">F-{s.step}</span>
+                  <h3 className="mt-2 text-xl font-extrabold text-xxl">{s.title}</h3>
+                  <p className="mt-3 text-gray-600 leading-relaxed">{s.en}</p>
+                  <p className="mt-2 text-gray-500 leading-relaxed text-sm">{s.np}</p>
+                </div>
+                <div className="lg:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src={s.img} alt={s.title} className="w-full h-auto block" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-2xl font-bold text-xxl mb-6">Lugs Manufacturing</h2>
           <div className="space-y-12 mb-16">
             {lugsSteps.map((s) => (
               <div key={s.step} className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
@@ -217,29 +235,12 @@ export default function Shocks() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-xxl mb-6">02 — Cartridge Assembly</h2>
-          <div className="space-y-12 mb-16">
+          <h2 className="text-2xl font-bold text-xxl mb-6">Cartridge Assembly</h2>
+          <div className="space-y-12">
             {cartridgeSteps.map((s) => (
               <div key={s.step} className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
                 <div className="lg:col-span-2 order-1 lg:order-none">
                   <span className="text-sm font-bold text-accent tracking-widest">C-{s.step}</span>
-                  <h3 className="mt-2 text-xl font-extrabold text-xxl">{s.title}</h3>
-                  <p className="mt-3 text-gray-600 leading-relaxed">{s.en}</p>
-                  <p className="mt-2 text-gray-500 leading-relaxed text-sm">{s.np}</p>
-                </div>
-                <div className="lg:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-                  <img src={s.img} alt={s.title} className="w-full h-auto block" />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <h2 className="text-2xl font-bold text-xxl mb-6">03 — Fork Tubes</h2>
-          <div className="space-y-12">
-            {forkSteps.map((s) => (
-              <div key={s.step} className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-                <div className="lg:col-span-2 order-1 lg:order-none">
-                  <span className="text-sm font-bold text-accent tracking-widest">F-{s.step}</span>
                   <h3 className="mt-2 text-xl font-extrabold text-xxl">{s.title}</h3>
                   <p className="mt-3 text-gray-600 leading-relaxed">{s.en}</p>
                   <p className="mt-2 text-gray-500 leading-relaxed text-sm">{s.np}</p>
