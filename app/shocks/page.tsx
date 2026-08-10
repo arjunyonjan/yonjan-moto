@@ -58,19 +58,26 @@ const cartridgeSteps = [
     img: '/images/cartridge-cylinder.png',
     step: '01',
     title: 'Cartridge Cylinder',
-    en: 'CAD model + CNC machining of the hollow cylinder with internal holes. Text reads “CARTRIDGE CYLINDER”.',
+    en: 'CAD model + CNC machining of hollow cylinder with internal holes. Text reads “CARTRIDGE CYLINDER”.',
     np: 'क्याड मोडेल + सीएनसी मेसिनिङ — हलो वाला सिलिन्डर।',
   },
   {
     img: '/images/cartridge-piston.png',
     step: '02',
     title: 'Mid-Valve Piston',
-    en: 'Three stages: CAD model, CNC drilling, and finished piston with polished internal threading.',
+    en: 'Three stages: CAD model, CNC drilling, finished piston with polished internal threading.',
     np: 'तीन अवस्था: क्याड, सीएनसी ढिल्लो, फिनिष्ड पिस्टन।',
   },
   {
-    img: '/images/cartridge-top-cap.png',
+    img: '/images/cartridge-base-valve.png',
     step: '03',
+    title: 'Base Valve',
+    en: 'Circular component CAD + CNC drilling with coolant flow, then polished to consistent thickness.',
+    np: 'सर्कुलर कम्पोनेन्ट — क्याड, सीएनसी ढिल्लो, पोलिशेड।',
+  },
+  {
+    img: '/images/cartridge-top-cap.png',
+    step: '04',
     title: 'Top Cap',
     en: 'Gold-plated cartridge top cap with precision concentric rings. CAD, CNC, polished finish.',
     np: 'गल्ड प्लेटेड टप क्याप — सीएनसी मेसिनिङ, पोलिशेड।',
@@ -88,7 +95,6 @@ export default function Shocks() {
           <p className="text-gray-500 max-w-2xl text-lg mb-4">End-to-end: lugs casting, CNC machining, cartridge assembly.</p>
           <p className="text-gray-400 max-w-2xl mb-16">शक-सस्टम निर्माण: लग कास्टिङ, सीएनसी मेसिनिङ, क्याबिनेट असेम्बली।</p>
 
-          {/* LUGS group */}
           <h2 className="text-2xl font-bold text-xxl mb-6">01 — Lugs Manufacturing</h2>
           <div className="space-y-12 mb-16">
             {lugsSteps.map((s) => (
@@ -106,7 +112,6 @@ export default function Shocks() {
             ))}
           </div>
 
-          {/* CARTRIDGE group */}
           <h2 className="text-2xl font-bold text-xxl mb-6">02 — Cartridge Assembly</h2>
           <div className="space-y-12">
             {cartridgeSteps.map((s) => (
